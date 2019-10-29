@@ -1,0 +1,80 @@
+class AB:
+    ab = {}
+
+    def __init__(self, key, value):
+        self.key = key
+        self.value = value
+        AB.ab[key] = value
+
+    def add():
+        def name():
+            name = input('Введите имя: ')
+        def sername():
+            sername = input('Введите фамилию: ')
+        def fathersname():
+            fathersname = input('Введите отчество: ')
+            if fathersname == '':
+                input()
+        def e_mail():
+            while True:
+                e_mail = input('Введите свой E-Mail: ')
+                cheack_mail = e_mail.find('@')
+                if cheack_mail == True:
+                    break
+                else:
+                    print('Вы не указали символ "@", попробуйте еще раз.')
+
+
+        address = input('Введите адрес: ')
+        obj = AB(name, address)
+        print("Элемент добавлен")
+
+    def delete():
+        name = input('Введите имя: ')
+        del AB.ab[name]
+
+    def printOut():
+        for i in AB.ab.items():
+            print(i)
+
+    def change():
+        name = input('Введите имя: ')
+        AB.ab[name] = input("Новое значение :")
+
+    def view(name):
+        print(AB.ab[name])
+
+    def menu():
+        x = None
+        while x != '6':
+            print('1. Вывод - 1\n'
+                  '2. Добавить - 2 \n'
+                  '3. Удалить - 3 \n'
+                  '4. Задать ключ - 4 \n'
+                  '5. Найти по ключу - 5 \n'
+                  '6. Выход - 6 ')
+
+            x = input('Введите значение : ')
+            if x == '1':
+                AB.printOut()
+            elif x == '2':
+                AB.add()
+            elif x == '3':
+                AB.delete()
+            elif x == '4':
+                AB.change()
+            elif x == '5':
+                try:
+                    a.key = input()
+                    AB.view(a.key)
+                except KeyError:
+                    print('Вы не верное значение, нажмите что 2 раза "Enter" для выхода в менею!')
+                    pass
+
+            elif x == '6':
+                break
+            input()
+
+a = AB('Alex', 'street1')
+b = AB('Nadezhda', 'street2')
+AB.menu()
